@@ -7,7 +7,6 @@ class User:
     def __repr__(self):
         return "<User {} and list is {} > ".format(self.name, self.movies)
 
-    def print_movie(self):
-        print("User {} as a list of movies which are: ".format(self.name))
-        for movie_name in self.movies.name:
-            print(movie_name)
+    def watched_movies(self):
+        movies_watched= list(filter(lambda movie: movie.watched, self.movies))
+        return movies_watched
