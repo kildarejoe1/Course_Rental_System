@@ -2,11 +2,14 @@
 
 from movie import Movie
 from user import User
+import json
 
 
-my_movie=Movie("Aliens","Sci-fi","Spielberg", True)
-my_user=User("James")
-my_user.movies.append(my_movie)
-print(my_user.watched_movies())
-my_user.remove_movie("Aliens")
-print(my_user.watched_movies())
+
+
+
+user=User.load_from_file("James.txt")
+print(user.json)
+
+with open("myfile.txt", "w") as f:
+    json.dump(user.json(), f)
