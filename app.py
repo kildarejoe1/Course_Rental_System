@@ -11,5 +11,6 @@ import json
 user=User.load_from_file("James.txt")
 print(user.json)
 
-with open("myfile.txt", "w") as f:
-    json.dump(user.json(), f)
+with open("myfile.txt", "r") as f:
+    json_data = json.load(f)
+    user = User.from_json(json_data)
